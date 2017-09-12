@@ -26,5 +26,64 @@ namespace WebMVC_ConfigServer_461.Controllers
 
             return View();
         }
+
+        public ActionResult ConfigServerSettings()
+        {
+            var config = ConfigServerConfig.Configuration;
+            var section = config.GetSection("spring:cloud:config");
+
+            if (section != null)
+            {
+                ViewBag.Enabled = section["enabled"];
+                ViewBag.Environment = section["env"];
+                ViewBag.FailFast = section["failFast"];
+                ViewBag.Label = section["label"];
+                ViewBag.Name = section["name"];
+                ViewBag.Password = section["password"];
+                ViewBag.Uri = section["uri"];
+                ViewBag.Username = section["username"];
+                ViewBag.ValidateCertificates = section["validate_certificates"];
+            }
+            else
+            {
+
+                ViewBag.Enabled = "Not Available";
+                ViewBag.Environment = "Not Available";
+                ViewBag.FailFast = "Not Available";
+                ViewBag.Label = "Not Available";
+                ViewBag.Name = "Not Available";
+                ViewBag.Password = "Not Available";
+                ViewBag.Uri = "Not Available";
+                ViewBag.Username = "Not Available";
+                ViewBag.ValidateCertificates = "Not Available";
+            }
+            return View();
+        }
+        public ActionResult Reload()
+        {
+            if (ConfigServerConfig.Configuration != null)
+            {
+                ConfigServerConfig.Configuration.Reload();
+            }
+
+            return View();
+        }
+
+        public ActionResult ConfigServerData()
+        {
+
+            var config = ConfigServerConfig.Configuration;
+            if (config != null)
+            {
+                ViewBag.Bar = config["bar"] ?? "Not returned";
+                ViewBag.Foo = config["foo"] ?? "Not returned";
+
+                ViewBag.Info_Url = config["info:url"] ?? "Not returned";
+                ViewBag.Info_Description = config["info:description"] ?? "Not returned";
+
+            }
+
+            return View();
+        }
     }
 }
