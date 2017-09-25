@@ -1,0 +1,11 @@
+﻿---
+applications:
+- name: webcfgsvr-<enter your name>
+	instances: 1
+	memory: 1G
+	path: ./bin/Release/PublishOutput
+# determines which environment to pull configs from
+	env:
+		ASPNETCORE_ENVIRONMENT: dev
+	services:
+	- <your config server instance name>
