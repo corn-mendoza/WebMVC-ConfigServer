@@ -75,6 +75,8 @@ namespace WebMVC_ConfigServer_461.Controllers
             var config = ConfigServerConfig.Configuration;
             if (config != null)
             {
+                ViewBag.LogLevel = config["loglevel"] ?? "Not returned";
+                ViewBag.ProductConnectionString = config["productdbconnstring"] ?? "Not returned";
                 ViewBag.Bar = config["bar"] ?? "Not returned";
                 ViewBag.Foo = config["foo"] ?? "Not returned";
 
