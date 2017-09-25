@@ -6,6 +6,6 @@ applications:
 	path: ./bin/Release/PublishOutput
 # determines which environment to pull configs from
 	env:
-		ASPNETCORE_ENVIRONMENT: dev
+		RUNTIME_ENVIRONMENT: dev
 	services:
 	- <your config server instance name>

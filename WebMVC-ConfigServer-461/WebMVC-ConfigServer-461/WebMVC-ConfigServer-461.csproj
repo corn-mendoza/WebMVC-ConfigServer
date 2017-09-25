@@ -295,6 +295,7 @@
     </Content>
     <Content Include="appsettings.json" />
     <Content Include="manifest.yml" />
+    <Content Include="appsettings.dev.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -16,8 +16,12 @@ namespace WebMVC_ConfigServer_461
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            var _env = Environment.GetEnvironmentVariable("RUNTIME_ENVIRONMENT");
 
-            ConfigServerConfig.RegisterConfig("development");
+            if (!string.IsNullOrEmpty(_env))
+                ConfigServerConfig.RegisterConfig(_env);
+            else
+                ConfigServerConfig.RegisterConfig("dev");
         }
     }
 }
