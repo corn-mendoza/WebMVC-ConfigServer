@@ -9,10 +9,8 @@ Spring Cloud Services wrap up key Spring Cloud projects with managed capabilitie
   1. In Pivotal Cloud Foundry Apps Manager, click on your “space” on the left, and switch to the “Services” tab. Note that all of these activities can also be done via the CF CLI. 
   2. Click “Add Service.” 
   3. Type “Spring” into the search box to narrow down the choices. 
-  4. Select “Service Registry” and select the default plan. 
-  5. Provide an instance name and do not choose to bind the service to any existing applications. Click “Add.” This service will take a couple of minutes to become available. 
-  6. Repeat step 3 above and choose “Config Server” from the marketplace. 
-  7. Choose the default plan, provide an instance name, and click “Add.” Wait a couple minutes before expecting to see this service fully operational. 
+  4. Select “Config Server” and select the default plan. 
+  5. Choose the default plan, provide an instance name, and click “Add.” Wait a couple minutes before expecting to see this service fully operational. 
 
 #### Point Config Server to Git repository 
   1. From the Terminal within Visual Studio Code, enter in the following command. This tells the Config Server where to get its configurations from: 
